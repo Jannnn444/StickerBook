@@ -20,18 +20,26 @@ struct CreatePage: View {
             Text("New Expense")
                 .font(.headline)
             
-            TextField("Amount", text: $amount)
-            TextField("Catefory",text: $category)
+            HStack {
+                TextField("Amount", text: $amount)
+                TextField("Catefory",text: $category)
+            }
             
             HStack {
                 Button("Cancel") {
                     isPresented = false
                 }
+                .frame(width: 50, height: 50)
+                .foregroundStyle(.black)
+                .font(.body)
                 
                 Button("Save") {
                     onSave()
                     isPresented = false
                 }
+                .frame(width: 50, height: 50)
+                .foregroundStyle(.black)
+                .font(.body)
             }
         }
         .padding()
