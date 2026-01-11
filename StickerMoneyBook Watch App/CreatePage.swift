@@ -21,12 +21,14 @@ struct CreatePage: View {
                 .font(.headline)
             
             HStack {
-                TextField("Amount", text: $amount)
+                TextField(":)", text: $amount)
+                    .frame(width: 50, height: 50)
+                    .font(.body)
                 TextField("Catefory",text: $category)
             }
             
             HStack {
-                Button("Cancel") {
+                Button("Back") {
                     isPresented = false
                 }
                 .frame(width: 50, height: 50)

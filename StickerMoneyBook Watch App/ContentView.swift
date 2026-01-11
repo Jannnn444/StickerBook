@@ -34,6 +34,8 @@ struct ContentView: View {
                     Text("Create your first spense!")
                         .foregroundStyle(.black)
                 }
+                
+                // Loop thru the list from API 
             }
             .padding()
         }
