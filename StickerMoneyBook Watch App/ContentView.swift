@@ -35,7 +35,10 @@ struct ContentView: View {
                         .foregroundStyle(.black)
                 }
                 
-                // Loop thru the list from API 
+                // Loop thru the list from API
+                
+                
+                
             }
             .padding()
         }
