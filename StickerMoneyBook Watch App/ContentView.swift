@@ -36,7 +36,7 @@ struct ContentView: View {
                 }
                 
                 // Loop thru the list from API
-                
+                RowView(record: <#T##Binding<[Record]>#>)
                 
                 
             }

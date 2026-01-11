@@ -9,11 +9,13 @@ import Foundation
 import SwiftUI
 
 struct RowView: View {
-    @Binding var icon: String
-    @Binding var title: String
-    @Binding var dollar: Int
+    @Binding var record: [Record]
     
     var body: some View {
-        /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Hello, world!@*/Text("Hello, world!")/*@END_MENU_TOKEN@*/
+        VStack {
+            ForEach(record) { r in
+                Text(r.icon)
+            }
+        }
     }
 }

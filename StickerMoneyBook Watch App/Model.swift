@@ -2,11 +2,10 @@
 //  Model.swift
 //  StickerMoneyBook Watch App
 //
-//  Created by Jan    on 2026/1/11.
+//  Created by Jan  on 2026/1/11.
 //
 
 import Foundation
-
 
 // MARK: Single User Financial Data
 
@@ -16,9 +15,11 @@ struct UserFinancialData {
 }
 
 // MARK: List - single entries, individual unit of data
-
-struct Record {
+struct Record: Identifiable {
+    var id = UUID() // this line for mock data, later we get it from api
     var date: Date
+    var icon: String
+    var description: String
     var amount: Double
     var type: TransactionType
 }
