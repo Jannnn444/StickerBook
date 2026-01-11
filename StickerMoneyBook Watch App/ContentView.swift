@@ -17,10 +17,20 @@ struct ContentView: View {
                 .cornerRadius(20)
             
             VStack {
-                Image(systemName: "plus")
-                    .imageScale(.large)
-                    .foregroundStyle(.tint)
-                    .padding()
+                Button(action: {
+                    isAnySpenseCreated = true
+                    print("Notes not zero: \(isAnySpenseCreated)")
+                    // Next: pop a new window
+                },) {
+                    // UI
+                    Image(systemName: "plus")
+                        .imageScale(.large)
+                        .foregroundStyle(.tint)
+                        .padding()
+                }.frame(width: 80, height: 80)
+                 .padding()
+                
+               
                 
                 if !isAnySpenseCreated {
                     Text("Create your first spense!")
