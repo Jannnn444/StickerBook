@@ -8,14 +8,27 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var isAnySpenseCreated: Bool = false
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        ZStack {
+            Rectangle()
+                .frame(width: 180, height: 200)
+                .cornerRadius(20)
+            
+            VStack {
+                Image(systemName: "plus")
+                    .imageScale(.large)
+                    .foregroundStyle(.tint)
+                    .padding()
+                
+                if !isAnySpenseCreated {
+                    Text("Create your first spense!")
+                        .foregroundStyle(.black)
+                }
+            }
+            .padding()
         }
-        .padding()
     }
 }
 
