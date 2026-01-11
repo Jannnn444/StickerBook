@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State var isAnySpenseCreated: Bool = false
+    @State var showingingCreatePage = false
     
     var body: some View {
         ZStack {
@@ -18,19 +19,16 @@ struct ContentView: View {
             
             VStack {
                 Button(action: {
-                    isAnySpenseCreated = true
-                    print("Notes not zero: \(isAnySpenseCreated)")
-                    // Next: pop a new window
+                    showingingCreatePage = true
                 },) {
                     // UI
                     Image(systemName: "plus")
                         .imageScale(.large)
                         .foregroundStyle(.tint)
                         .padding()
-                }.frame(width: 80, height: 80)
-                 .padding()
-                
-               
+                }
+                .frame(width: 80, height: 80)
+                .padding()
                 
                 if !isAnySpenseCreated {
                     Text("Create your first spense!")
@@ -38,6 +36,11 @@ struct ContentView: View {
                 }
             }
             .padding()
+        }
+        .sheet(isPresented: $showingingCreatePage) {
+            CreatePage(isPresented: $showingingCreatePage, onSave: {
+                isAnySpenseCreated = true
+            })
         }
     }
 }
